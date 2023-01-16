@@ -1,0 +1,34 @@
+name: example
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  riverpod_builder:
+    path: ../
+
+  cupertino_icons: ^1.0.5
+  flutter_riverpod: ^2.1.3
+  freezed_annotation: ^2.2.0
+  gap: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.1
+  build_runner: ^2.3.3
+  json_serializable: ^6.5.4
+  freezed: ^2.3.2
+  source_gen: ^1.2.6
+
+flutter:
+  uses-material-design: true
