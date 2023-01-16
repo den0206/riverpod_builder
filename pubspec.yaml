@@ -1,6 +1,6 @@
 name: riverpod_builder
-description: A new Flutter package project.
-version: 0.1.0
+description: easy to use riverpod state management.
+version: 0.1.1
 homepage: 'https://github.com/den0206/riverpod_builder'
 
 environment:
