@@ -15,7 +15,8 @@ and the Flutter guide for
 # Purpose
 
 Easy to use awesome package [Riverpod](https://pub.dev/packages/flutter_riverpod) for some design pattern  
-I created this package to use Riverpod's Provider like the ListView and PageView widgets that are implemented in the Flutter standard.We believe that someone with experience in Flutter development can handle it easily.
+I created this package to use Riverpod's Provider like the ListView and PageView widgets that are implemented in the Flutter standard.We believe that someone with experience in Flutter development can handle it easily.  
+
 
 ## View (builder)
 
@@ -97,7 +98,9 @@ class FirstViewModel extends BaseViewModel<FirstViewState> {
 |`onDispose`|call when this class close.|
 |`refreshProvider` |use invalidate(refresh) other provider.|
 
+# Preview
 
+![samle](README_images/sample.gif)
 
 # Status of support Providers type
 ※ This package requires **Riverpod 2 or higher**.  
