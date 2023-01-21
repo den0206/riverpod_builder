@@ -1,5 +1,3 @@
-
-
 import 'dart:developer' as developer;
 
 // Blue text
@@ -22,6 +20,6 @@ void logError(String msg) {
   developer.log('\x1B[31m$msg\x1B[0m');
 }
 
-void afunc() {}
+
 
 // https://www.kindacode.com/article/flutter-how-to-colorize-debug-console-logs/

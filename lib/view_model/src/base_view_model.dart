@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_builder/log/color_log';
+import 'package:riverpod_builder/log/src/color_log.dart';
 
 abstract class BaseViewModel<S> extends AutoDisposeNotifier<S>
     with InnerViewModel<S> {
@@ -62,5 +62,11 @@ abstract class InnerViewModel<S> {
   //ignore: no-empty-block
   void onDispose() {
     logInfo("Dispose $runtimeType");
+  }
+
+  void refreshProvider(ProviderBase<Object?> provider) {
+    if (providerRef.exists(provider)) {
+      providerRef.invalidate(provider);
+    }
   }
 }
