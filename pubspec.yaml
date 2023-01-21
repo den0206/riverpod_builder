@@ -1,6 +1,6 @@
 name: riverpod_builder
-description: easy to use riverpod state management.
-version: 0.1.1
+description: Easy to use awesome package Riverpod for some design pattern I created this package to use Riverpod's Provider like the ListView and PageView widgets that are implemented in the Flutter standard.We believe that someone with experience in Flutter development can handle it easily.
+version: 0.1.2
 homepage: 'https://github.com/den0206/riverpod_builder'
 
 environment:
