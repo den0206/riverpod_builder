@@ -9,11 +9,11 @@ class FirstViewModel extends BaseViewModel<FirstViewState> {
 
   int get count => state.count;
 
-  // listen another provider
+  // listen other provider
   int? get streamCount =>
       widgetRef.watch(UtilsProviders.streamCountProvider).value;
 
-  // listen another provider
+  // listen other provider
   SecondViewModel get secondVM =>
       widgetRef.watch(ViewProviders.secondViewModelProvider.notifier);
 

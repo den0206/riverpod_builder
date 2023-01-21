@@ -14,17 +14,18 @@ and the Flutter guide for
 
 # Purpose
 
-Easy to use awesome package Riverpod for some design pattern.
-## Features
+Easy to use awesome package [Riverpod](https://pub.dev/packages/flutter_riverpod) for some design pattern  
+I created this package to use Riverpod's Provider like the ListView and PageView widgets that are implemented in the Flutter standard.We believe that someone with experience in Flutter development can handle it easily.
 
-### View (builder)
+## View (builder)
 
 ``` dart
   @override
   Widget build(BuildContext context) {
     // wrap this buider 
     return RiverpodBuilder(
-      provider: ViewProviders.firstViewModelProvider,
+      // set use provider
+      provider: firstViewModelProvider,
       builder: (context, ref, vm, state, reader) {
         return Scaffold(
           appBar: AppBar(
@@ -36,13 +37,17 @@ Easy to use awesome package Riverpod for some design pattern.
 
 ### property
 
-- `context` means build context
-- `ref` means WidgetRef
-- `vm` ref.watch(provider.notifier);
-- `state` ref.watch(provider);
-- `reader` ref.read(provider.notifier);
+| name | mean |
+| :--- | :--- |
+|`context`| means Build Context|
+|`ref`| means WidgetRef|
+|`vm` (notifier) |ref.watch(provider.notifier);|
+|`state` |ref.watch(provider);|
+|`reader` |ref.read(provider.notifier);|
 
-### View Model
+
+
+## View Model
 
 ``` dart
 class FirstViewModel extends BaseViewModel<FirstViewState> {
@@ -51,7 +56,7 @@ class FirstViewModel extends BaseViewModel<FirstViewState> {
 
   int get count => state.count;
 
-  // listen another provider
+  // listen other provider
   SecondViewModel get secondVM =>
       widgetRef.read(secondViewModelProvider.notifier);
 
@@ -77,12 +82,83 @@ class FirstViewModel extends BaseViewModel<FirstViewState> {
 
 ### property
 
-- `context` means build context
-- `ref` means WidgetRef
-- `widgetRef` means PrividerRef
-- `state` this state;
-- `onInit` (function) triger when this class init;
-- `onDispose` (function) triger when this class close;
+| name | mean |
+| :--- | :--- |
+|`context`| means Build Context|
+|`ref`| means PrividerRef|
+|`widgetRef` |means WidgetRef|
+|`state` |this state|
 
-# 
- Writing Documents more detail... 
+### method
+
+| name | mean |
+| :--- | :--- |
+|`onInit`|call when this class init. (Asynchronous processing is also possible)|
+|`onDispose`|call when this class close.|
+|`refreshProvider` |use invalidate(refresh) other provider.|
+
+
+
+# Status of support Providers type
+※ This package requires **Riverpod 2 or higher**.  
+
+## corresponding
+
+| builder | provider type | BaseVM|
+| :--- | :--- | :--- |
+|`RiverpodBuilder`| NotifierProvider | BaseViewModel |
+|`KeepRiverpodBuilder`|AutoDisposeNotifierProvider| KeepBaseViewModel |
+
+currently we offer two types of builder.  
+We plan to increase the types of providers supported and adapte to hooks  in the near future.
+
+## supplementary information
+We know that many people use **stateNotifierProvier** in this case.  
+However, since the Riverpod developers [recommend](https://docs-v2.riverpod.dev/docs/providers/state_notifier_provider) the use of **NotifierProvider**, we decided to be the first to respond.
+
+## Extended package
+Extending this package is very easy.  
+ex : `The case where you want to define common Methods that you want to use in all VM...`  
+- In that case, create an extension class for `InnerViewModel` after defining other providers..
+
+``` dart
+import 'package:fluttertoast/fluttertoast.dart';
+
+extension InnerViewModelEXT on InnerViewModel {
+
+  // OverlayLoadingView.provider = provider to manage loading
+
+  bool get isLoading => providerRef.read(OverlayLoadingView.provider);
+
+  // show Loading
+  void showLoading() {
+    providerRef.read(OverlayLoadingView.provider.notifier).show();
+  }
+
+  // hide Loading
+  void hideLoading() {
+    providerRef.read(OverlayLoadingView.provider.notifier).hide();
+  }
+
+  void showAlert(String message) {
+    // alert method
+  }
+
+  void showToast(String message) {
+    // other packages can be defined and used here as well.
+    Fluttertoast.showToast(
+        msg: message, toastLength: Toast.LENGTH_SHORT, timeInSecForIosWeb: 1);
+  }
+}
+
+```
+***
+Writing Documents more detail...
+
+
+
+
+
+
+
+

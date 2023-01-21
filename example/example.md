@@ -1,12 +1,14 @@
 
-※ (optional) if you use package Freezed excute following command.
+This is a minimal sample.  
+If you want to know more details, please check [example folder](../example) .
+
+- ※ (optional) if you use package Freezed excute following command.
 
 ```
 flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
-This is a minimal sample.  
-If you want to know more details, please check `example` folder.
+
 
 ```dart
 void main() {
@@ -69,7 +71,7 @@ class FirstViewModel extends BaseViewModel<FirstViewState> {
   
   @override
   void onInit() async {
-    // triger init this model
+    // call init this model
     // Asynchronous processing is also possible .
     await Future.delayed(const Duration(seconds: 1));
     super.onInit();
@@ -78,7 +80,7 @@ class FirstViewModel extends BaseViewModel<FirstViewState> {
   
   @override
   void onDispose() {
-    // triger close this model
+    // call close this model
     super.onDispose();
   }
 
