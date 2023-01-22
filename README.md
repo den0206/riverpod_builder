@@ -36,7 +36,15 @@ I created this package to use Riverpod's Provider like the ListView and PageView
           ...
 ```
 
-### property
+### arguments
+
+| name | mean |
+| :--- | :--- |
+|`provider`| riverpod provider |
+|`builder`| use it like a ListView or PageView|
+|`showlog`  |setting whether to display the Log |
+
+### builder  property
 
 | name | mean |
 | :--- | :--- |
@@ -45,6 +53,9 @@ I created this package to use Riverpod's Provider like the ListView and PageView
 |`vm` (notifier) |ref.watch(provider.notifier);|
 |`state` |ref.watch(provider);|
 |`reader` |ref.read(provider.notifier);|
+
+### log
+![log_image](README_images/log_image.png)
 
 
 
@@ -100,7 +111,11 @@ class FirstViewModel extends BaseViewModel<FirstViewState> {
 
 # Preview
 
-![samle](README_images/sample.gif)
+
+
+<img src="README_images/sample.gif" height="600"/>
+
+
 
 # Status of support Providers type
 ※ This package requires **Riverpod 2 or higher**.  

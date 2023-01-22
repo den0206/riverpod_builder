@@ -8,12 +8,15 @@ class RiverpodBuilder<T extends BaseViewModel<S>, S>
     super.key,
     required this.provider,
     required this.builder,
+    this.showLog = true,
   });
 
   final Widget Function(
       BuildContext context, WidgetRef ref, T vm, S state, T reader) builder;
 
   final AutoDisposeNotifierProvider<T, S> provider;
+
+  final bool showLog;
 
   @override
   ConsumerState<RiverpodBuilder> createState() => _RiverpodBuilderState<T, S>();
@@ -29,6 +32,9 @@ class _RiverpodBuilderState<T extends BaseViewModel<S>, S>
 
     if (!isInit) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!widget.showLog)
+          ref.read(widget.provider.notifier).showLog = widget.showLog;
+
         // 初期化
         ref.read(widget.provider.notifier).onInit();
       });
