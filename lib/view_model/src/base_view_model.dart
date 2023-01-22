@@ -52,16 +52,18 @@ abstract class InnerViewModel<S> {
   late WidgetRef widgetRef;
   late BuildContext context;
 
+  bool showLog = true;
+
   @mustCallSuper
   //ignore: no-empty-block
   void onInit() {
-    logSuccess("Init $runtimeType");
+    if (showLog) logSuccess("Init $runtimeType");
   }
 
   @mustCallSuper
   //ignore: no-empty-block
   void onDispose() {
-    logInfo("Dispose $runtimeType");
+    if (showLog) logInfo("Dispose $runtimeType");
   }
 
   void refreshProvider(ProviderBase<Object?> provider) {
