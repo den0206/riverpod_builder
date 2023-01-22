@@ -1,3 +1,5 @@
+## 0.1.3
+* add **showLog** argument
 ## 0.1.2
 * fix README
 * add invalidate method
