@@ -1,7 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_builder/builder/builder.dart';
 import 'package:riverpod_builder/log/src/color_log.dart';
 
+/// We recommend defining a ViewModel(notifier) inheriting from this class.
+///
+/// This ViewModel is adapted from [RiverpodBuilder] ([AutoDisposeNotifier]).
+///
+/// It is suitable for adoption when **auto dispose of Notifier is desired**.
 abstract class BaseViewModel<S> extends AutoDisposeNotifier<S>
     with InnerViewModel<S> {
   @override
@@ -19,6 +25,11 @@ abstract class BaseViewModel<S> extends AutoDisposeNotifier<S>
   }
 }
 
+/// We recommend defining a ViewModel(notifier) inheriting from this class.
+///
+/// This ViewModel is adapted from [KeepRiverpodBuilder] ([Notifier]).
+///
+/// It is suitable for adoption when **auto dispose of Notifier is not desired**.
 abstract class KeepBaseViewModel<S> extends Notifier<S> with InnerViewModel<S> {
   @override
   NotifierProviderRef<S> get providerRef => ref;
@@ -46,6 +57,11 @@ abstract class KeepBaseViewModel<S> extends Notifier<S> with InnerViewModel<S> {
   }
 }
 
+/// This class is the base of [BaseViewModel] and [KeepBaseViewModel].
+///
+///If you want to add common functions included in BaseVM(Notifier) above,
+///
+///please extension this class.
 abstract class InnerViewModel<S> {
   abstract final S instanse;
   abstract final NotifierProviderRef<S> providerRef;

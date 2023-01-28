@@ -55,7 +55,8 @@ I created this package to use Riverpod's Provider like the ListView and PageView
 |`reader` |ref.read(provider.notifier);|
 
 ### log
-![log_image](README_images/log_image.png)
+
+<img width="139" alt="log_image" src="https://user-images.githubusercontent.com/43921126/215244565-8048adf5-2eab-41b2-85ea-003e5d3b6a99.png">
 
 
 
@@ -113,8 +114,7 @@ class FirstViewModel extends BaseViewModel<FirstViewState> {
 
 
 
-<img src="README_images/sample.gif" height="600"/>
-
+<img src="https://user-images.githubusercontent.com/43921126/215244748-7cc3d33a-ffdb-45d8-87fd-ba54f8b00147.gif" height="600"/>
 
 
 # Status of support Providers type

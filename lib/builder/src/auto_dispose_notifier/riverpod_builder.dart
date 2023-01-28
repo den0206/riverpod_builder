@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_builder/view_model/src/base_view_model.dart';
 
+/// This Builder is adapted from [BaseViewModel] ([AutoDisposeNotifier]).
+///
+/// It is suitable for adoption when **auto dispose of Notifier is desired**.
 class RiverpodBuilder<T extends BaseViewModel<S>, S>
     extends ConsumerStatefulWidget {
   const RiverpodBuilder({
@@ -22,6 +25,7 @@ class RiverpodBuilder<T extends BaseViewModel<S>, S>
   ConsumerState<RiverpodBuilder> createState() => _RiverpodBuilderState<T, S>();
 }
 
+/// [RiverpodBuilder] state.
 class _RiverpodBuilderState<T extends BaseViewModel<S>, S>
     extends ConsumerState<RiverpodBuilder<T, S>> {
   bool isInit = false;
