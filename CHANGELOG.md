@@ -1,3 +1,5 @@
+## 0.1.4
+* add **Documents** argument
 ## 0.1.3
 * add **showLog** argument
 ## 0.1.2

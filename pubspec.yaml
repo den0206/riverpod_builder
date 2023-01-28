@@ -1,7 +1,10 @@
 name: riverpod_builder
 description: the package to use Riverpod's Provider like the ListView and PageView widgets.We believe that Flutter development can handle it easily.
-version: 0.1.3
+version: 0.1.4
 homepage: 'https://github.com/den0206/riverpod_builder'
+platforms:
+  android:
+  ios:
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
