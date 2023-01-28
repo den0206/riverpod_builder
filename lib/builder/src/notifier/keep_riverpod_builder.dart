@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_builder/view_model/src/base_view_model.dart';
 
+/// This Builder is adapted from [KeepBaseViewModel] ([Notifier]).
+///
+/// It is suitable for adoption when **auto dispose of Notifier is not desired**.
 class KeepRiverpodBuilder<T extends KeepBaseViewModel<S>, S>
     extends ConsumerStatefulWidget {
   const KeepRiverpodBuilder({
@@ -23,6 +26,7 @@ class KeepRiverpodBuilder<T extends KeepBaseViewModel<S>, S>
       _KeepRiverpodBuilder<T, S>();
 }
 
+/// [KeepRiverpodBuilder] state.
 class _KeepRiverpodBuilder<T extends KeepBaseViewModel<S>, S>
     extends ConsumerState<KeepRiverpodBuilder<T, S>> {
   @override
