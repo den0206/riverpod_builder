@@ -1,5 +1,8 @@
+## 0.1.5
+* set **Version range of the package or SDK**
+* set **Library Reference**
 ## 0.1.4
-* add **Documents** argument
+* add **Documents** 
 ## 0.1.3
 * add **showLog** argument
 ## 0.1.2
