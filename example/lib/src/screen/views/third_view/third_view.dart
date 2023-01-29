@@ -45,6 +45,7 @@ class ThirdView extends StatelessWidget {
                   child: const Text("Update Value"),
                   onPressed: () {
                     reader.updateValue();
+                    reader.dismissKeyboard();
                   },
                 )
               ],

@@ -13,7 +13,6 @@ class ThirdViewModel extends BaseViewModel<ThirdViewState> {
   void updateValue() {
     state = state.copyWith(textValue: txtController.text);
     txtController.clear();
-    dismissKeyboard();
   }
 
   Future<void> popPage() async {
