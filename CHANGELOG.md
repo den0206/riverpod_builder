@@ -1,3 +1,7 @@
+
+## 0.1.6
+* fix **Example app**
+* check Riverpod **ver 2.2.0**
 ## 0.1.5
 * set **Version range of the package or SDK**
 * set **Library Reference**
