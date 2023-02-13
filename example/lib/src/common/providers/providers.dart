@@ -1,5 +1,6 @@
 import 'package:example/src/repositry/sample_repositry.dart';
 import 'package:example/src/screen/main_tab/main_tab_notifier.dart';
+import 'package:example/src/screen/router.dart';
 import 'package:example/src/screen/views/first_view/first_view_model.dart';
 import 'package:example/src/screen/views/first_view/first_view_state.dart';
 import 'package:example/src/screen/views/second_view/second_view_model.dart';
@@ -22,6 +23,11 @@ class ViewProviders {
   static final thirdViewModelProvider =
       AutoDisposeNotifierProvider<ThirdViewModel, ThirdViewState>(
           ThirdViewModel.new);
+}
+
+class SettinfsProviders {
+  static final routerProvider =
+      Provider<SampleRouter>((ref) => SampleRouter(ref));
 }
 
 class RepositryProviders {

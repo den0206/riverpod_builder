@@ -3,9 +3,15 @@ import 'package:example/src/screen/views/first_view/first_view.dart';
 import 'package:example/src/screen/views/second_view/second_view.dart';
 import 'package:example/src/screen/views/third_view/third_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SampleRouter {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
+  SampleRouter(this.ref);
+  final Ref ref;
+
+  final initialRoute = MainTabScreen.routeName;
+
+  Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case MainTabScreen.routeName:
         return MaterialPageRoute(builder: (_) => const MainTabScreen());
