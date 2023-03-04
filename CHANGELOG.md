@@ -1,4 +1,7 @@
 
+## 0.1.7
+* fix **Example app**
+* check Riverpod **ver 2.3.0**
 ## 0.1.6
 * fix **Example app**
 * check Riverpod **ver 2.2.0**
