@@ -1,3 +1,6 @@
+## 0.1.9
+* fix **Example app**
+* check Riverpod **ver 2.3.6**
 ## 0.1.8
 * fix **Example app**
 * check Riverpod **ver 2.3.4**
