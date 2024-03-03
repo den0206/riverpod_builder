@@ -49,8 +49,10 @@ class _RiverpodBuilderState<T extends BaseViewModel<S>, S>
   void dispose() {
     super.dispose();
 
-    // 強制破棄
-    ref.watch(widget.provider.notifier).onDispose();
+    // if (ref.exists(widget.provider)) {
+    //   // 強制破棄
+    //   ref.watch(widget.provider.notifier).onDispose();
+    // }
   }
 
   @override
