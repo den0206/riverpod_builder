@@ -1,6 +1,8 @@
+# dart pub publish --dry-run
+
 name: riverpod_builder
 description: the package to use Riverpod's Provider like the ListView and PageView widgets.We believe that Flutter development can handle it easily.
-version: 0.2.0
+version: 0.2.1
 homepage: 'https://github.com/den0206/riverpod_builder'
 platforms:
   android:
@@ -17,7 +19,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.1
+  flutter_lints: ^3.0.1
 
 # flutter pub publish --dry-run
 flutter:

@@ -1,3 +1,7 @@
+## 0.2.1
+* update **Example app**
+* check Flutter SDK **ver 3.19**
+* check Riverpod **ver 2.4.10**
 ## 0.2.0
 * fix **Example app**
 * check Flutter SDK **ver 3.10**

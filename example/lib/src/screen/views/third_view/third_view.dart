@@ -19,6 +19,7 @@ class ThirdView extends StatelessWidget {
               icon: const Icon(Icons.close),
               onPressed: () async {
                 await reader.popPage();
+                if (context.mounted) Navigator.of(context).pop();
               },
             ),
           ),
@@ -45,7 +46,9 @@ class ThirdView extends StatelessWidget {
                   child: const Text("Update Value"),
                   onPressed: () {
                     reader.updateValue();
-                    reader.dismissKeyboard();
+                    if (context.mounted) {
+                      reader.dismissKeyboard();
+                    }
                   },
                 )
               ],
