@@ -21,9 +21,6 @@ class ThirdViewModel extends BaseViewModel<ThirdViewState> {
 
     dismissKeyboard();
     await Future.delayed(const Duration(seconds: 1));
-
-    // ignore: use_build_context_synchronously
-    Navigator.of(context).pop();
   }
 
   void dismissKeyboard() {

@@ -15,6 +15,7 @@ class SecondView extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: const Text("Second View"),
+            automaticallyImplyLeading: false,
           ),
           body: Column(
             children: [
